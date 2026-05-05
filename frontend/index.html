@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InterviewAI - Ace Your Next Interview</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/styles/landing.css">
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="bg-mesh">
+        <div class="orb orb-coral"></div>
+        <div class="orb orb-sky"></div>
+        <div class="orb orb-amber"></div>
+        <div class="noise-overlay"></div>
+    </div>
+
+    <div class="container">
+        <!-- Navbar -->
+        <nav class="navbar" id="navbar">
+            <div class="nav-content">
+                <div class="logo">InterviewAI</div>
+                <div class="nav-links">
+                    <a href="#how-it-works" class="nav-link">How it Works</a>
+                    <a href="#features" class="nav-link">Features</a>
+                    <a href="interview.html" class="btn btn-primary">Start Interview</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero fade-up">
+            <div class="pill-badge">
+                <i data-lucide="zap" width="16" height="16" color="var(--coral)"></i>
+                Powered by Llama 3.2
+            </div>
+            
+            <h1>Ace Your Next Interview</h1>
+            <p>Upload your resume. Our AI interviews you based on YOUR experience and gives you an honest performance report.</p>
+            
+            <div class="hero-ctas">
+                <a href="interview.html" class="btn btn-primary">Start Interview <i data-lucide="arrow-right" width="18"></i></a>
+                <a href="#how-it-works" class="btn btn-ghost">See How It Works</a>
+            </div>
+            
+            <div class="trust-badges delay-1">
+                <span><i data-lucide="check-circle" width="16"></i> Resume-Based Questions</span>
+                <span><i data-lucide="check-circle" width="16"></i> Adaptive AI</span>
+                <span><i data-lucide="check-circle" width="16"></i> Instant Report</span>
+            </div>
+
+            <!-- CSS-only floating mock card -->
+            <div class="mock-card-container fade-up delay-2">
+                <div class="mock-card">
+                    <div class="mock-bubble ai">
+                        <strong>Interviewer</strong><br>
+                        I see you built a scalable order processing system using Redis. Can you explain how you handled message reliability and potential dropped tasks?
+                    </div>
+                    <div class="mock-bubble user">
+                        <strong>You</strong><br>
+                        We implemented a pattern using Redis Streams with consumer groups, which provided built-in acknowledgment mechanisms. If a consumer crashed before ACK...
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="how-it-works fade-up">
+            <h2 class="section-title">Three Steps to Interview Mastery</h2>
+            
+            <div class="steps-grid">
+                <div class="step-card fade-up delay-1">
+                    <div class="step-icon-wrapper icon-sky">
+                        <i data-lucide="file-up"></i>
+                    </div>
+                    <span class="step-number">Step 01</span>
+                    <h3>Upload Resume</h3>
+                    <p>Drop in your PDF resume and tell us the job title you are targeting. We'll analyze your background instantly.</p>
+                </div>
+                
+                <div class="step-card fade-up delay-2">
+                    <div class="step-icon-wrapper icon-coral">
+                        <i data-lucide="message-square"></i>
+                    </div>
+                    <span class="step-number">Step 02</span>
+                    <h3>AI Interviews You</h3>
+                    <p>Engage in a dynamic, text-based conversation where the AI asks probing questions derived strictly from your experience.</p>
+                </div>
+                
+                <div class="step-card fade-up delay-3">
+                    <div class="step-icon-wrapper icon-amber">
+                        <i data-lucide="bar-chart-2"></i>
+                    </div>
+                    <span class="step-number">Step 03</span>
+                    <h3>Get Your Report</h3>
+                    <p>Receive a brutally honest, structured breakdown of your strengths, weaknesses, and a final hire recommendation.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features fade-up">
+            <h2 class="section-title">Why Practice With Us?</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card feature-large fade-up">
+                    <i data-lucide="brain-circuit" width="32" height="32"></i>
+                    <h3>Adaptive Questioning</h3>
+                    <p>Unlike standard question banks, our AI listens to your answers. If you give a vague response, it will probe deeper. If you crush it, it moves on to the next topic organically.</p>
+                </div>
+                
+                <div class="feature-card fade-up delay-1">
+                    <i data-lucide="file-text" width="28" height="28"></i>
+                    <h3>Resume-Grounded</h3>
+                    <p>Every question references a specific project, skill, or role from your uploaded PDF.</p>
+                </div>
+                
+                <div class="feature-card fade-up delay-2">
+                    <i data-lucide="shield-check" width="28" height="28"></i>
+                    <h3>Honest Scoring</h3>
+                    <p>No sugar-coating. You get a realistic 0-100 score based on technical depth and communication.</p>
+                </div>
+                
+                <div class="feature-card fade-up delay-3">
+                    <i data-lucide="zap" width="28" height="28"></i>
+                    <h3>Instant Feedback</h3>
+                    <p>The moment the interview concludes, your comprehensive report is generated in seconds.</p>
+                </div>
+                
+                <div class="feature-card fade-up delay-1">
+                    <i data-lucide="lock" width="28" height="28"></i>
+                    <h3>No Data Stored</h3>
+                    <p>Sessions run locally or ephemerally. Your resume data disappears after the interview.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Banner -->
+        <section class="cta-banner fade-up">
+            <h2>Ready to find out if you're interview-ready?</h2>
+            <a href="interview.html" class="btn btn-white">Start Your Interview Now</a>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <span class="logo">InterviewAI</span>
+            <p>Built with Llama 3.2 & FastAPI &copy; 2026</p>
+        </footer>
+    </div>
+
+    <script src="assets/js/landing.js"></script>
+</body>
+</html>

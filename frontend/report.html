@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Report - InterviewAI</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/styles/report.css">
+</head>
+<body>
+
+    <div class="container" id="reportContainer" style="display: none;">
+        
+        <!-- Header Bar -->
+        <header class="header-bar">
+            <div class="logo-wrap">
+                <i data-lucide="brain-circuit" width="28"></i>
+                <span class="logo">InterviewAI</span>
+            </div>
+            <div class="header-title">Performance Report</div>
+            <a href="index.html" class="btn btn-ghost">
+                Start New Interview
+            </a>
+        </header>
+
+        <!-- Hero Score Section -->
+        <section class="hero-score">
+            <div class="recommendation-badge" id="recommendationBadge">
+                <!-- Badge inserted by JS -->
+            </div>
+            
+            <div class="score-ring-container">
+                <svg width="180" height="180">
+                    <circle class="ring-bg" cx="90" cy="90" r="70"></circle>
+                    <circle class="ring-fill" id="scoreRing" cx="90" cy="90" r="70"></circle>
+                </svg>
+                <div class="score-text"><span id="overallScore">0</span>%</div>
+            </div>
+            
+            <h2 id="candidateSubtitle">Candidate Evaluation</h2>
+        </section>
+
+        <!-- Summary Card -->
+        <section class="summary-card" id="reportSummary">
+            <!-- Summary inserted by JS -->
+        </section>
+
+        <!-- Category Scores -->
+        <section class="category-scores">
+            <h3>Skill Breakdown</h3>
+            <div id="categoryBars">
+                <!-- Bars inserted by JS -->
+            </div>
+        </section>
+
+        <!-- Three-Column Analysis -->
+        <section class="analysis-grid">
+            <div class="analysis-col col-strengths">
+                <h3><i data-lucide="check-circle"></i> Strengths</h3>
+                <div class="analysis-list" id="listStrengths"></div>
+            </div>
+            
+            <div class="analysis-col col-weaknesses">
+                <h3><i data-lucide="alert-triangle"></i> Areas of Concern</h3>
+                <div class="analysis-list" id="listWeaknesses"></div>
+            </div>
+            
+            <div class="analysis-col col-improvements">
+                <h3><i data-lucide="arrow-up-right"></i> How to Improve</h3>
+                <div class="analysis-list" id="listImprovements"></div>
+            </div>
+        </section>
+
+        <!-- Action Footer -->
+        <footer class="action-footer">
+            <button class="btn btn-ghost" id="shareBtn">
+                <i data-lucide="link"></i> Copy Link
+            </button>
+            <button class="btn btn-primary" id="downloadBtn">
+                <i data-lucide="download"></i> Download PDF
+            </button>
+        </footer>
+    </div>
+
+    <div id="loadingState" style="height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+        <i data-lucide="loader" style="animation: spin 1s linear infinite; width: 48px; height: 48px; color: var(--coral); margin-bottom: 16px;"></i>
+        <h2 style="font-family: 'Plus Jakarta Sans', sans-serif;">Loading Report...</h2>
+        <style>@keyframes spin { 100% { transform: rotate(360deg); } }</style>
+    </div>
+    
+    <div id="errorState" style="display: none; height: 100vh; align-items: center; justify-content: center; flex-direction: column; color: red;">
+        <i data-lucide="alert-circle" style="width: 48px; height: 48px; margin-bottom: 16px;"></i>
+        <h2 style="font-family: 'Plus Jakarta Sans', sans-serif;" id="errorText">Failed to load report</h2>
+        <a href="index.html" class="btn btn-ghost" style="margin-top: 16px; border: 1px solid red; color: red;">Go Home</a>
+    </div>
+
+    <script src="assets/js/report.js"></script>
+</body>
+</html>

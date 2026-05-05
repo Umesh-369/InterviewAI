@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Session - InterviewAI</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/styles/interview.css">
+</head>
+
+<body>
+
+    <!-- PHASE 1: Upload Panel -->
+    <div id="uploadPhase" class="upload-container">
+        <div class="upload-card">
+            <div class="logo-small">
+                <i data-lucide="brain-circuit" color="var(--coral)"></i>
+                InterviewAI
+            </div>
+            <h2>Let's set up your interview</h2>
+
+            <form id="setupForm">
+                <div class="drop-zone" id="dropZone">
+                    <i data-lucide="cloud-upload" width="48" height="48"></i>
+                    <p>Drop your resume here (PDF only, max 5MB)</p>
+                    <p>or click to browse</p>
+                    <input type="file" id="fileInput" accept="application/pdf">
+                </div>
+                <div id="fileInfo" class="file-info hidden">
+                    <i data-lucide="check-circle" width="16"></i>
+                    <span id="fileName">resume.pdf</span>
+                </div>
+                <div id="fileError" class="error-msg"></div>
+
+                <div class="input-group">
+                    <label for="jobTitle">Target Job Title</label>
+                    <input type="text" id="jobTitle" placeholder="e.g. Senior Software Engineer" required>
+                </div>
+
+                <button type="submit" id="startBtn" class="btn" disabled>
+                    <span id="startBtnText">Begin Interview <i data-lucide="arrow-right"></i></span>
+                </button>
+                <div id="uploadError" class="error-msg"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- PHASE 2: Chat Interface -->
+    <div id="chatPhase" class="chat-container hidden">
+
+        <!-- Left Panel -->
+        <aside class="left-panel">
+            <div class="candidate-card">
+                <div class="candidate-header">
+                    <div class="candidate-avatar">
+                        <i data-lucide="user"></i>
+                    </div>
+                    <div class="candidate-info">
+                        <h3 id="sidebarCandidateName">Candidate</h3>
+                        <span id="sidebarJobTitle" class="job-badge">Software Engineer</span>
+                    </div>
+                </div>
+                <div class="candidate-file">
+                    <i data-lucide="file-text" width="14"></i>
+                    <span id="sidebarFileName">resume.pdf</span>
+                </div>
+            </div>
+
+            <div class="progress-section">
+                <div class="circular-progress">
+                    <svg width="120" height="120">
+                        <circle class="progress-bg" cx="60" cy="60" r="50"></circle>
+                        <circle class="progress-bar" id="progressBar" cx="60" cy="60" r="50" stroke-dasharray="314"
+                            stroke-dashoffset="314"></circle>
+                    </svg>
+                    <div class="progress-text" id="progressCount">1</div>
+                </div>
+                <div class="progress-label">Question <span id="currentQ">1</span> of ~10</div>
+            </div>
+
+            <div class="tips-accordion">
+                <div class="tips-header" id="tipsHeader">
+                    Interview Tips
+                    <i data-lucide="chevron-down" id="tipsIcon"></i>
+                </div>
+                <div class="tips-content" id="tipsContent">
+                    <ul>
+                        <li>Be specific and use data.</li>
+                        <li>Use the STAR method (Situation, Task, Action, Result) for behavioral questions.</li>
+                        <li>Keep answers concise (1-2 paragraphs).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="status-indicator">
+                <div class="pulse-dot"></div>
+                Interview in progress
+            </div>
+        </aside>
+
+        <!-- Right Panel -->
+        <main class="right-panel">
+            <!-- Overlay for completion -->
+            <div id="completionOverlay" class="overlay hidden">
+                <h2>Interview Complete! 🎉</h2>
+                <p>Generating your performance report...</p>
+                <div class="loading-bar">
+                    <div class="loading-bar-fill"></div>
+                </div>
+                <p id="overlayError" class="error-msg" style="margin-top: 16px;"></p>
+            </div>
+
+            <header class="chat-header">
+                <div class="avatar-circle">
+                    <i data-lucide="bot" width="24"></i>
+                </div>
+                <div>
+                    <h2 style="font-size: 18px; font-weight: 600; font-family: 'Plus Jakarta Sans', sans-serif;">Lyra
+                    </h2>
+                    <p style="font-size: 13px; color: var(--text-muted);">AI Interviewer</p>
+                </div>
+            </header>
+
+            <div class="chat-messages" id="chatMessages">
+                <!-- Messages will be injected here -->
+            </div>
+
+            <div class="typing-indicator" id="typingIndicator">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+
+            <div class="chat-input-area">
+                <div class="input-wrapper">
+                    <textarea id="answerInput" placeholder="Type your answer here... (Ctrl+Enter to send)"
+                        rows="1"></textarea>
+                    <span class="char-counter" id="charCounter">0</span>
+                    <button id="sendBtn" class="btn-send">
+                        <i data-lucide="send" width="18"></i>
+                    </button>
+                </div>
+                <div id="chatError" class="error-msg" style="margin-top: 8px;"></div>
+            </div>
+        </main>
+
+    </div>
+
+    <script src="assets/js/interview.js"></script>
+</body>
+
+</html>
