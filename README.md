@@ -9,7 +9,7 @@
 [![Ollama](https://img.shields.io/badge/Ollama-Llama_3.2-000000?style=for-the-badge&logo=meta&logoColor=white)](https://ollama.com)
 [![License](https://img.shields.io/badge/License-MIT-F59E0B?style=for-the-badge)](LICENSE)
 
-**A fully local, privacy-first AI interview platform that evaluates candidates based on their actual resume — no cloud APIs, no data leaks.**
+**A fully local , AI interview platform that evaluates candidates based on their actual resume — no cloud APIs, no data leaks.**
 
 [Getting Started](#-getting-started) · [Features](#-features) · [Architecture](#-architecture) · [API Reference](#-api-reference) · [Contributing](#-contributing)
 
