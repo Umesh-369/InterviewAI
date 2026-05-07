@@ -153,10 +153,6 @@ ResumeInterview/
 │           ├── interview.css
 │           └── report.css
 │
-├── 📂 testsprite_tests/            # Automated API test suite
-│   ├── TC001–TC010                 # 10 end-to-end test cases
-│   └── testsprite-mcp-test-report  # Test execution reports
-│
 └── README.md                       # ← You are here
 ```
 
@@ -300,31 +296,6 @@ Retrieve the generated interview performance report.
     "recommendation": "Hire"
   }
 }
-```
-
----
-
-## 🧪 Testing
-
-The project includes **10 automated API test cases** powered by [TestSprite](https://testsprite.com):
-
-| Test ID | Description |
-|:--------|:------------|
-| TC001 | Upload resume with valid data |
-| TC002 | Upload resume with invalid/missing data |
-| TC003 | Upload resume with server parsing failure |
-| TC004 | Chat with valid session and answer |
-| TC005 | Chat with final answer completing interview |
-| TC006 | Chat with missing or malformed data |
-| TC007 | Chat with unknown session ID |
-| TC008 | Get report for completed interview |
-| TC009 | Get report while report is generating |
-| TC010 | Get report with invalid/non-existent session ID |
-
-```bash
-# Run all tests
-cd testsprite_tests
-python -m pytest TC*.py -v
 ```
 
 ---
